@@ -202,6 +202,7 @@ On the INA datasets, Vid2Seq with CLIP features:
 * improves to **SODA_c 10.6 / 5.2 CIDEr / 3.9 METEOR** on the adjusted ground truth,
 * and achieves **32.0% recall / 31.8% precision** for event localization in the adjusted setting.
 
-These results are consistent with Vid2Seq’s strong performance on public benchmarks while illustrating the specific challenges of heterogeneous archival data (annotation style, segmentation density, multilingual captions).
+These results are consistent with Vid2Seq’s strong performance on public benchmarks while illustrating the specific challenges of heterogeneous archival data.
+
 
 
