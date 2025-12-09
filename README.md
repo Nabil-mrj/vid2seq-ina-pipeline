@@ -130,10 +130,8 @@ INA and INA adjusted correspond to the original and re-annotated INA datasets.
 <table>
 <tr><th>Model</th><th>YouCook2</th><th>ViTT</th><th>ActivityNet</th><th>INA</th><th>INA (adjusted)</th></tr>
 
-<tr><td>MT (TSN)</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
-<tr><td>ECHR (C3D)</td><td>–</td><td>–</td><td>3.2</td><td>–</td><td>–</td></tr>
+
 <tr><td>PDVC (TSN)</td><td>4.4</td><td>–</td><td>5.4</td><td>–</td><td>–</td></tr>
-<tr><td>PDVC* (CLIP)</td><td>4.9</td><td>–</td><td>6.0</td><td>–</td><td>–</td></tr>
 <tr><td>UEDVC (TSN)</td><td>–</td><td>–</td><td>5.5</td><td>–</td><td>–</td></tr>
 <tr><td>E2ESG (C3D)</td><td>25.0</td><td>25.0</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td><b>Vid2Seq (Ours, CLIP)</b></td><td>7.9</td><td>13.5</td><td>5.8</td><td>8.2</td><td>10.6</td></tr>
@@ -147,10 +145,7 @@ INA and INA adjusted correspond to the original and re-annotated INA datasets.
 <table>
 <tr><th>Model</th><th>YouCook2</th><th>ViTT</th><th>ActivityNet</th><th>INA</th><th>INA (adjusted)</th></tr>
 
-<tr><td>MT (TSN)</td><td>6.1</td><td>–</td><td>9.3</td><td>–</td><td>–</td></tr>
-<tr><td>ECHR (C3D)</td><td>–</td><td>–</td><td>14.7</td><td>–</td><td>–</td></tr>
 <tr><td>PDVC (TSN)</td><td>22.7</td><td>–</td><td>29.0</td><td>–</td><td>–</td></tr>
-<tr><td>PDVC* (CLIP)</td><td>28.9</td><td>–</td><td>29.3</td><td>–</td><td>–</td></tr>
 <tr><td>UEDVC (TSN)</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td>E2ESG (C3D)</td><td>–</td><td>8.1</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td><b>Vid2Seq (Ours, CLIP)</b></td><td>47.1</td><td>43.5</td><td>30.1</td><td>5.0</td><td>5.2</td></tr>
@@ -164,10 +159,7 @@ INA and INA adjusted correspond to the original and re-annotated INA datasets.
 <table>
 <tr><th>Model</th><th>YouCook2</th><th>ViTT</th><th>ActivityNet</th><th>INA</th><th>INA (adjusted)</th></tr>
 
-<tr><td>MT (TSN)</td><td>3.2</td><td>–</td><td>5.0</td><td>–</td><td>–</td></tr>
-<tr><td>ECHR (C3D)</td><td>3.8</td><td>–</td><td>7.2</td><td>–</td><td>–</td></tr>
 <tr><td>PDVC (TSN)</td><td>4.7</td><td>–</td><td>8.0</td><td>–</td><td>–</td></tr>
-<tr><td>PDVC* (CLIP)</td><td>5.7</td><td>–</td><td>7.6</td><td>–</td><td>–</td></tr>
 <tr><td>UEDVC (TSN)</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td>E2ESG (C3D)</td><td>3.5</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td><b>Vid2Seq (Ours, CLIP)</b></td><td>9.3</td><td>8.5</td><td>8.5</td><td>3.6</td><td>3.9</td></tr>
@@ -197,7 +189,6 @@ INA and INA adjusted correspond to the original and re-annotated INA datasets.
 </tr>
 
 <tr><td>PDVC</td><td>TSN</td><td>–</td><td>–</td><td>–</td><td>–</td><td>55.4</td><td>58.1</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
-<tr><td>PDVC*</td><td>CLIP</td><td>–</td><td>–</td><td>–</td><td>–</td><td>53.2</td><td>54.7</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td>UEDVC</td><td>TSN</td><td>–</td><td>–</td><td>–</td><td>–</td><td>59.0</td><td>60.3</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td>E2ESG</td><td>C3D</td><td>20.7</td><td>20.6</td><td>32.2</td><td>32.1</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td><b>Vid2Seq (Ours)</b></td><td>CLIP</td><td>27.9</td><td>27.8</td><td>42.6</td><td>46.2</td><td>52.7</td><td>53.9</td><td>23.4</td><td>30.3</td><td>32.0</td><td>31.8</td></tr>
@@ -212,4 +203,5 @@ On the INA datasets, Vid2Seq with CLIP features:
 * and achieves **32.0% recall / 31.8% precision** for event localization in the adjusted setting.
 
 These results are consistent with Vid2Seq’s strong performance on public benchmarks while illustrating the specific challenges of heterogeneous archival data (annotation style, segmentation density, multilingual captions).
+
 
