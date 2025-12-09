@@ -10,7 +10,7 @@ The project implements a complete, modular pipeline:
 4. **Evaluation** using the official Vid2Seq dense-captioning metrics (`dvc_eval`) and additional text metrics.  
 5. **Comparison to state-of-the-art baselines** on several benchmarks and on the INA dataset (original and re-annotated).
 
-INA data and pre-trained checkpoints are not included in this repository due to licensing constraints, but the code is designed to be reusable on other corpora (e.g. ActivityNet, YouCook2) with compatible formats.
+INA data and pre-trained checkpoints are not included in this repository, but the code is designed to be reusable on other corpora (e.g. ActivityNet, YouCook2) with compatible formats.
 
 ---
 
@@ -114,89 +114,7 @@ It was used during the internship to verify whether low metrics were caused by g
 
 ---
 
-## Installation
 
-```bash
-python -m venv .venv
-source .venv/bin/activate       # or Scripts/activate on Windows
-
-pip install -r requirements.txt
-```
-
-You will also need:
-
-* a Vid2Seq checkpoint and configuration compatible with `scenic.projects.vid2seq`,
-* `ffmpeg` and `ffprobe` available in your `PATH` if you want MP4 + subtitles,
-* access to the target dataset (INA is not distributed here).
-
----
-
-## Usage
-
-### 1. Run Vid2Seq inference on a feature file
-
-```bash
-python scripts/vid2seq_inference.py \
-  path/to/features.npy \
-  path/to/checkpoint_dir \
-  path/to/config.py \
-  --video path/to/video.mp4 \
-  --out_video outputs/
-```
-
-This will:
-
-* read `features.npy`,
-* run Vid2Seq decoding,
-* apply NMS + semantic fusion,
-* write `outputs/<video_id>.json`,
-* and, if `--video` is provided, produce `outputs/<video_id>_subs.mp4` with burned-in subtitles.
-
-If the original MP4 is not available, you can provide only the duration:
-
-```bash
-python scripts/vid2seq_inference.py \
-  path/to/features.npy \
-  path/to/checkpoint_dir \
-  path/to/config.py \
-  --duration 97.3 \
-  --out_video outputs/
-```
-
-### 2. Evaluate a set of predictions
-
-Ground truth is expected to be organized as:
-
-```text
-DVC_annotation/
-  video_001/
-    annotations.csv
-  video_002/
-    annotations.csv
-  ...
-```
-
-Predictions are a folder of CSVs with at least `tc_start`, `tc_end`, `caption`.
-
-```bash
-python scripts/run_eval.py \
-  --gt-root DVC_annotation \
-  --pred-root results_vid2seq \
-  --out scores_vid2seq.csv
-```
-
-### 3. Compare multiple runs
-
-```bash
-python scripts/compare_runs.py \
-  --gt-root DVC_annotation \
-  --pred-root-baseline results_vid2seq \
-  --pred-root-clean results_vid2seq_clean \
-  --pred-root-corrected results_vid2seq_corrected \
-  --out comparison.csv
-```
-
----
 
 ## Dense Video Captioning Results
 
