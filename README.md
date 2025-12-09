@@ -26,7 +26,7 @@ INA data and pre-trained checkpoints are not included in this repository, but th
 
 ---
 
-## Project Architecture
+## Project architecture
 
 ```text
 .
@@ -65,7 +65,7 @@ The script can export:
 * a **JSON** file with timestamps and sentences (Vid2Seq format),
 * an optional **subtitled MP4** created via `ffmpeg` using a temporary SRT file.
 
-### Ground Truth and Predictions (`src/gt_parsing.py`, `src/data_loading.py`)
+### Ground truth and predictions (`src/gt_parsing.py`, `src/data_loading.py`)
 
 * `gt_parsing.py`:
 
@@ -102,7 +102,7 @@ The script can export:
 
 `compare_runs.py` allows comparison of several prediction folders (e.g. baseline vs cleaned vs corrected captions) by reporting aggregated metrics for each configuration.
 
-### Caption Cleaning (Optional) (`src/text_cleanup.py`)
+### Caption cleaning (optional) (`src/text_cleanup.py`)
 
 This module implements an optional correction pipeline:
 
@@ -116,7 +116,7 @@ It was used during the internship to verify whether low metrics were caused by g
 
 
 
-## Dense Video Captioning Results
+## Dense video captioning results
 
 The tables below report Vid2Seq performance against state-of-the-art dense video captioning baselines.
 INA and INA adjusted correspond to the original and re-annotated INA datasets.
@@ -203,6 +203,7 @@ On the INA datasets, Vid2Seq with CLIP features:
 * and achieves **32.0% recall / 31.8% precision** for event localization in the adjusted setting.
 
 These results are consistent with Vid2Seq’s strong performance on public benchmarks while illustrating the specific challenges of heterogeneous archival data.
+
 
 
 
