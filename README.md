@@ -118,30 +118,92 @@ It was used during the internship to verify whether low metrics were caused by g
 
 ## Dense Video Captioning Results
 
-The tables below summarize dense-captioning and event localization results across several benchmarks.
-INA and INA adjusted correspond to the original and re-annotated INA datasets, respectively.
+The tables below report Vid2Seq performance against state-of-the-art dense video captioning baselines.
+INA and INA adjusted correspond to the original and re-annotated INA datasets.
 
-### Dense-captioning metrics (SODA_c / CIDEr / METEOR)
+---
 
-| Backbone             | YouCook2 (val) SODA_c | YouCook2 (val) CIDEr | YouCook2 (val) METEOR | ViTT (test) SODA_c | ViTT (test) CIDEr | ViTT (test) METEOR | ActivityNet (val) SODA_c | ActivityNet (val) CIDEr | ActivityNet (val) METEOR | INA SODA_c | INA CIDEr | INA METEOR | INA adjusted SODA_c | INA adjusted CIDEr | INA adjusted METEOR |
-| -------------------- | --------------------- | -------------------- | --------------------- | ------------------ | ----------------- | ------------------ | ------------------------ | ----------------------- | ------------------------ | ---------- | --------- | ---------- | ------------------- | ------------------ | ------------------- |
-| MT (TSN)             | –                     | 6.1                  | 3.2                   | –                  | –                 | –                  | –                        | 9.3                     | 5.0                      | –          | –         | –          | –                   | –                  | –                   |
-| ECHR (C3D)           | –                     | –                    | 3.8                   | –                  | –                 | –                  | 3.2                      | 14.7                    | 7.2                      | –          | –         | –          | –                   | –                  | –                   |
-| PDVC (TSN)           | 4.4                   | 22.7                 | 4.7                   | –                  | –                 | –                  | 5.4                      | 29.0                    | 8.0                      | –          | –         | –          | –                   | –                  | –                   |
-| PDVC* (CLIP)         | 4.9                   | 28.9                 | 5.7                   | –                  | –                 | –                  | 6.0                      | 29.3                    | 7.6                      | –          | –         | –          | –                   | –                  | –                   |
-| UEDVC (TSN)          | –                     | –                    | –                     | –                  | –                 | –                  | 5.5                      | –                       | –                        | –          | –         | –          | –                   | –                  | –                   |
-| E2ESG (C3D)          | 25.0                  | –                    | 3.5                   | 25.0               | 8.1               | –                  | –                        | –                       | –                        | –          | –         | –          | –                   | –                  | –                   |
-| Vid2Seq (Ours, CLIP) | 7.9                   | 47.1                 | 9.3                   | 13.5               | 43.5              | 8.5                | 5.8                      | 30.1                    | 8.5                      | 8.2        | 5.0       | 3.6        | 10.6                | 5.2                | 3.9                 |
+## Dense-captioning metrics
 
-### Event localization metrics (Recall / Precision)
+### SODA_c
 
-| Method         | Backbone | YouCook2 (val) Recall | YouCook2 (val) Precision | ViTT (test) Recall | ViTT (test) Precision | ActivityNet (val) Recall | ActivityNet (val) Precision | INA Recall | INA Precision | INA adjusted Recall | INA adjusted Precision |
-| -------------- | -------- | --------------------- | ------------------------ | ------------------ | --------------------- | ------------------------ | --------------------------- | ---------- | ------------- | ------------------- | ---------------------- |
-| PDVC           | TSN      | –                     | –                        | –                  | –                     | 55.4                     | 58.1                        | –          | –             | –                   | –                      |
-| PDVC*          | CLIP     | –                     | –                        | –                  | –                     | 53.2                     | 54.7                        | –          | –             | –                   | –                      |
-| UEDVC          | TSN      | –                     | –                        | –                  | –                     | 59.0                     | 60.3                        | –          | –             | –                   | –                      |
-| E2ESG          | C3D      | 20.7                  | 20.6                     | 32.2               | 32.1                  | –                        | –                           | –          | –             | –                   | –                      |
-| Vid2Seq (Ours) | CLIP     | 27.9                  | 27.8                     | 42.6               | 46.2                  | 52.7                     | 53.9                        | 23.4       | 30.3          | 32.0                | 31.8                   |
+<table>
+<tr><th>Model</th><th>YouCook2</th><th>ViTT</th><th>ActivityNet</th><th>INA</th><th>INA (adjusted)</th></tr>
+
+<tr><td>MT (TSN)</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>ECHR (C3D)</td><td>–</td><td>–</td><td>3.2</td><td>–</td><td>–</td></tr>
+<tr><td>PDVC (TSN)</td><td>4.4</td><td>–</td><td>5.4</td><td>–</td><td>–</td></tr>
+<tr><td>PDVC* (CLIP)</td><td>4.9</td><td>–</td><td>6.0</td><td>–</td><td>–</td></tr>
+<tr><td>UEDVC (TSN)</td><td>–</td><td>–</td><td>5.5</td><td>–</td><td>–</td></tr>
+<tr><td>E2ESG (C3D)</td><td>25.0</td><td>25.0</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td><b>Vid2Seq (Ours, CLIP)</b></td><td>7.9</td><td>13.5</td><td>5.8</td><td>8.2</td><td>10.6</td></tr>
+
+</table>
+
+---
+
+### CIDEr
+
+<table>
+<tr><th>Model</th><th>YouCook2</th><th>ViTT</th><th>ActivityNet</th><th>INA</th><th>INA (adjusted)</th></tr>
+
+<tr><td>MT (TSN)</td><td>6.1</td><td>–</td><td>9.3</td><td>–</td><td>–</td></tr>
+<tr><td>ECHR (C3D)</td><td>–</td><td>–</td><td>14.7</td><td>–</td><td>–</td></tr>
+<tr><td>PDVC (TSN)</td><td>22.7</td><td>–</td><td>29.0</td><td>–</td><td>–</td></tr>
+<tr><td>PDVC* (CLIP)</td><td>28.9</td><td>–</td><td>29.3</td><td>–</td><td>–</td></tr>
+<tr><td>UEDVC (TSN)</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>E2ESG (C3D)</td><td>–</td><td>8.1</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td><b>Vid2Seq (Ours, CLIP)</b></td><td>47.1</td><td>43.5</td><td>30.1</td><td>5.0</td><td>5.2</td></tr>
+
+</table>
+
+---
+
+### METEOR
+
+<table>
+<tr><th>Model</th><th>YouCook2</th><th>ViTT</th><th>ActivityNet</th><th>INA</th><th>INA (adjusted)</th></tr>
+
+<tr><td>MT (TSN)</td><td>3.2</td><td>–</td><td>5.0</td><td>–</td><td>–</td></tr>
+<tr><td>ECHR (C3D)</td><td>3.8</td><td>–</td><td>7.2</td><td>–</td><td>–</td></tr>
+<tr><td>PDVC (TSN)</td><td>4.7</td><td>–</td><td>8.0</td><td>–</td><td>–</td></tr>
+<tr><td>PDVC* (CLIP)</td><td>5.7</td><td>–</td><td>7.6</td><td>–</td><td>–</td></tr>
+<tr><td>UEDVC (TSN)</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>E2ESG (C3D)</td><td>3.5</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td><b>Vid2Seq (Ours, CLIP)</b></td><td>9.3</td><td>8.5</td><td>8.5</td><td>3.6</td><td>3.9</td></tr>
+
+</table>
+
+---
+
+## Event localization metrics
+
+### Recall and Precision
+
+<table>
+<tr>
+<th>Model</th>
+<th>Backbone</th>
+<th>YouCook2 Recall</th>
+<th>YouCook2 Precision</th>
+<th>ViTT Recall</th>
+<th>ViTT Precision</th>
+<th>ActivityNet Recall</th>
+<th>ActivityNet Precision</th>
+<th>INA Recall</th>
+<th>INA Precision</th>
+<th>INA adj. Recall</th>
+<th>INA adj. Precision</th>
+</tr>
+
+<tr><td>PDVC</td><td>TSN</td><td>–</td><td>–</td><td>–</td><td>–</td><td>55.4</td><td>58.1</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>PDVC*</td><td>CLIP</td><td>–</td><td>–</td><td>–</td><td>–</td><td>53.2</td><td>54.7</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>UEDVC</td><td>TSN</td><td>–</td><td>–</td><td>–</td><td>–</td><td>59.0</td><td>60.3</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>E2ESG</td><td>C3D</td><td>20.7</td><td>20.6</td><td>32.2</td><td>32.1</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td><b>Vid2Seq (Ours)</b></td><td>CLIP</td><td>27.9</td><td>27.8</td><td>42.6</td><td>46.2</td><td>52.7</td><td>53.9</td><td>23.4</td><td>30.3</td><td>32.0</td><td>31.8</td></tr>
+
+</table>
+
 
 On the INA datasets, Vid2Seq with CLIP features:
 
@@ -150,3 +212,4 @@ On the INA datasets, Vid2Seq with CLIP features:
 * and achieves **32.0% recall / 31.8% precision** for event localization in the adjusted setting.
 
 These results are consistent with Vid2Seq’s strong performance on public benchmarks while illustrating the specific challenges of heterogeneous archival data (annotation style, segmentation density, multilingual captions).
+
