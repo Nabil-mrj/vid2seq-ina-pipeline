@@ -1,4 +1,4 @@
-# Vid2Seq on INA Archives — Dense Video Captioning and Evaluation Pipeline
+# Vid2Seq on INA archives — Dense video captioning and evaluation pipeline
 
 This repository contains the code used to run Vid2Seq on INA (French National Audiovisual Institute) archival videos and to evaluate its performance against existing dense video captioning baselines.
 
@@ -203,6 +203,7 @@ On the INA datasets, Vid2Seq with CLIP features:
 * and achieves **32.0% recall / 31.8% precision** for event localization in the adjusted setting.
 
 These results are consistent with Vid2Seq’s strong performance on public benchmarks while illustrating the specific challenges of heterogeneous archival data.
+
 
 
 
